@@ -1,4 +1,4 @@
-package com.example.futbolliga
+package com.example.futbolliga.app
 
 import android.app.Application
 import com.example.futbolliga.di.appModule

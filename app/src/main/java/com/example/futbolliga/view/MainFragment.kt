@@ -1,9 +1,10 @@
-package com.example.futbolliga
+package com.example.futbolliga.view
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.futbolliga.R
 import com.example.futbolliga.databinding.FragmentMainBinding
 
 class MainFragment : Fragment(R.layout.fragment_main) {

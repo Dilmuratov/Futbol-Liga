@@ -1,4 +1,4 @@
-package com.example.futbolliga
+package com.example.futbolliga.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,10 +7,13 @@ import android.util.Log
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import com.example.futbolliga.data.local.Constants
+import com.example.futbolliga.R
 import com.example.futbolliga.data.models.MatchData
 import com.example.futbolliga.data.models.TeamData
 import com.example.futbolliga.databinding.FragmentRandomBinding
 import com.example.futbolliga.presentation.MainViewModel
+import com.example.futbolliga.utils.set
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel

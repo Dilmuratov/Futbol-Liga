@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.futbolliga.SplashFragment"
+        android:name="com.example.futbolliga.view.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.futbolliga.MainFragment"
+        android:name="com.example.futbolliga.view.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/randomFragment"
-        android:name="com.example.futbolliga.RandomFragment"
+        android:name="com.example.futbolliga.view.RandomFragment"
         android:label="RandomFragment"
         tools:layout="@layout/fragment_random" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.futbolliga
+package com.example.futbolliga.data.local
 
 import com.example.futbolliga.data.models.TeamData
 
