@@ -5,10 +5,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "random_matches")
 data class MatchData(
-    @PrimaryKey
-    val id: Int,
+    @PrimaryKey(autoGenerate = true)
+    var id: Int,
     val teamA: String,
     val teamB: String,
+    val teamAUrl: String,
+    val teamBUrl: String,
     val scoreA: Int,
     val scoreB: Int
 )

@@ -3,12 +3,13 @@ package com.example.futbolliga.view
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import com.example.futbolliga.data.local.Constants
+import androidx.navigation.fragment.findNavController
 import com.example.futbolliga.R
+import com.example.futbolliga.data.local.Constants
 import com.example.futbolliga.data.models.MatchData
 import com.example.futbolliga.data.models.TeamData
 import com.example.futbolliga.databinding.FragmentRandomBinding
@@ -25,7 +26,6 @@ class RandomFragment : Fragment(R.layout.fragment_random) {
     private lateinit var teamB: TeamData
     private var scoreA = 0
     private var scoreB = 0
-    private lateinit var listOfResult: List<MatchData>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentRandomBinding.bind(view)
@@ -34,23 +34,6 @@ class RandomFragment : Fragment(R.layout.fragment_random) {
 
         setInitialData()
 
-        initObservers()
-
-        test1()
-    }
-
-    private fun test1() {
-
-    }
-
-    private fun initObservers() {
-        try {
-            mainViewModel.allMatchesLiveData.observe(requireActivity()) {
-                listOfResult = it
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
     }
 
     private fun setInitialData() {
@@ -142,7 +125,7 @@ class RandomFragment : Fragment(R.layout.fragment_random) {
         binding.llRandom.setOnClickListener {
             val teamList = Constants.teamsForRandom.shuffled()
 
-            val timer = object : CountDownTimer(2400, 100) {
+            val timer = object : CountDownTimer(2400, 80) {
                 override fun onTick(millisUntilFinished: Long) {
                     val teamData1 = teamList.shuffled()[0]
                     binding.tvFirst.text = teamData1.teamName.apply {
@@ -162,11 +145,13 @@ class RandomFragment : Fragment(R.layout.fragment_random) {
                 }
 
                 override fun onFinish() {
-
+                    binding.etScoreFirst.setText("0")
+                    binding.etScoreSecond.setText("0")
                 }
             }
 
             timer.start()
+
         }
 
         binding.btnSave.setOnClickListener {
@@ -176,21 +161,27 @@ class RandomFragment : Fragment(R.layout.fragment_random) {
                         0,
                         teamA.teamName,
                         teamB.teamName,
+                        teamA.teamLogo,
+                        teamB.teamLogo,
                         scoreA,
                         scoreB
                     )
                 )
+
+                Toast.makeText(requireActivity(), "Tabıslı saqlandı!", Toast.LENGTH_SHORT).show()
+                binding.etScoreFirst.setText("0")
+                binding.etScoreSecond.setText("0")
+                scoreA = 0
+                scoreB = 0
             }
         }
 
         binding.llResults.setOnClickListener {
-            MainScope().launch {
-                mainViewModel.getAllMatches()
-            }
+            findNavController().navigate(R.id.action_randomFragment_to_savedGameFragment)
+        }
 
-            if (::listOfResult.isInitialized) {
-                Log.d("TAG", "initListeners: ${listOfResult.joinToString { it.scoreA.toString() }}")
-            }
+        binding.llSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_randomFragment_to_settingsRandomFragment)
         }
     }
 

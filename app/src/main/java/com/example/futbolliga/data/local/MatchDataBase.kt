@@ -6,7 +6,7 @@ import com.example.futbolliga.data.models.MatchData
 
 @Database(
     entities = [MatchData::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class MatchDataBase : RoomDatabase() {

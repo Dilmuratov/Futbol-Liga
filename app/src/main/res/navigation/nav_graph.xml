@@ -29,5 +29,22 @@
         android:id="@+id/randomFragment"
         android:name="com.example.futbolliga.view.RandomFragment"
         android:label="RandomFragment"
-        tools:layout="@layout/fragment_random" />
+        tools:layout="@layout/fragment_random">
+        <action
+            android:id="@+id/action_randomFragment_to_savedGameFragment"
+            app:destination="@id/savedGameFragment" />
+        <action
+            android:id="@+id/action_randomFragment_to_settingsRandomFragment"
+            app:destination="@id/settingsRandomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedGameFragment"
+        android:name="com.example.futbolliga.view.SavedGameFragment"
+        android:label="SavedGameFragment"
+        tools:layout="@layout/fragment_saved_games" />
+    <fragment
+        android:id="@+id/settingsRandomFragment"
+        android:name="com.example.futbolliga.view.SettingsRandomFragment"
+        android:label="SettingsRandomFragment"
+        tools:layout="@layout/fragment_settings_random" />
 </navigation>
