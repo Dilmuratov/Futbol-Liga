@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_add_players"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="Qatnasıwshılardı kiritiń"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_player"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/gilroy_regular"
+        android:hint="Qatnasıwshılardı kiritiń"
+        android:maxLength="20"
+        android:padding="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/btn_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_players" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="Qosıw"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/et_player"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_player"
+        app:layout_constraintTop_toTopOf="@id/et_player" />
+
+    <LinearLayout
+        android:id="@+id/ll_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_edittext"
+        android:minHeight="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_player">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_player" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="*Jámi 6 komanda bar. 2 adam 1-turdı oynamay keyingi basqıshqa shıǵadı."
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/ll_recycler_view"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_random"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/tv_state"
+        app:layout_constraintTop_toBottomOf="@id/tv_state">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_btn"
+            android:padding="8dp"
+            android:src="@drawable/ic_random" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="8dp"
+        android:text="Chempionat dúziw"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/ll_random"
+        app:layout_constraintEnd_toEndOf="@+id/ll_recycler_view"
+        app:layout_constraintTop_toTopOf="@+id/ll_random" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

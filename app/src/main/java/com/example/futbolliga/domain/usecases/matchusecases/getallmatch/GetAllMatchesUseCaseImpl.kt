@@ -1,4 +1,4 @@
-package com.example.futbolliga.domain.usecases
+package com.example.futbolliga.domain.usecases.matchusecases.getallmatch
 
 import com.example.futbolliga.domain.MainRepository
 

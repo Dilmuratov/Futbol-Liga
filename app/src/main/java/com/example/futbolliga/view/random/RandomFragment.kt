@@ -1,4 +1,4 @@
-package com.example.futbolliga.view
+package com.example.futbolliga.view.random
 
 import android.annotation.SuppressLint
 import android.os.Bundle

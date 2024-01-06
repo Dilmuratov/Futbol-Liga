@@ -3,10 +3,11 @@ package com.example.futbolliga.data.local
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.example.futbolliga.data.models.MatchData
+import com.example.futbolliga.data.models.Player
 
 @Database(
-    entities = [MatchData::class],
-    version = 2,
+    entities = [MatchData::class, Player::class],
+    version = 3,
     exportSchema = false
 )
 abstract class MatchDataBase : RoomDatabase() {

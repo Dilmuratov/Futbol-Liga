@@ -1,4 +1,4 @@
-package com.example.futbolliga.domain.usecases
+package com.example.futbolliga.domain.usecases.matchusecases.addmatch
 
 import com.example.futbolliga.data.models.MatchData
 import com.example.futbolliga.domain.MainRepository

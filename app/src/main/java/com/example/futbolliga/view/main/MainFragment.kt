@@ -1,4 +1,4 @@
-package com.example.futbolliga.view
+package com.example.futbolliga.view.main
 
 import android.os.Bundle
 import android.view.View
@@ -19,6 +19,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private fun initListeners() {
         binding.llCategoryRandom.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_randomFragment)
+        }
+
+        binding.llCategoryChampionship.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_addPlayerFragment)
         }
     }
 }

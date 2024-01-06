@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.futbolliga.view.SplashFragment"
+        android:name="com.example.futbolliga.view.main.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
@@ -18,16 +18,19 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.futbolliga.view.MainFragment"
+        android:name="com.example.futbolliga.view.main.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_randomFragment"
             app:destination="@id/randomFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addPlayerFragment"
+            app:destination="@id/addPlayerFragment" />
     </fragment>
     <fragment
         android:id="@+id/randomFragment"
-        android:name="com.example.futbolliga.view.RandomFragment"
+        android:name="com.example.futbolliga.view.random.RandomFragment"
         android:label="RandomFragment"
         tools:layout="@layout/fragment_random">
         <action
@@ -39,12 +42,17 @@
     </fragment>
     <fragment
         android:id="@+id/savedGameFragment"
-        android:name="com.example.futbolliga.view.SavedGameFragment"
+        android:name="com.example.futbolliga.view.random.SavedGameFragment"
         android:label="SavedGameFragment"
         tools:layout="@layout/fragment_saved_games" />
     <fragment
         android:id="@+id/settingsRandomFragment"
-        android:name="com.example.futbolliga.view.SettingsRandomFragment"
+        android:name="com.example.futbolliga.view.random.SettingsRandomFragment"
         android:label="SettingsRandomFragment"
         tools:layout="@layout/fragment_settings_random" />
+    <fragment
+        android:id="@+id/addPlayerFragment"
+        android:name="com.example.futbolliga.view.championship.AddPlayerFragment"
+        android:label="AddPlayerFragment"
+        tools:layout="@layout/fragment_add_players" />
 </navigation>

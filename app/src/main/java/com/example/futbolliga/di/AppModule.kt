@@ -10,7 +10,11 @@ val appModule = module {
         MainViewModelImpl(
             addMatchUseCase = get(),
             deleteMatchUseCase = get(),
-            getAllMatchesUseCase = get()
+            getAllMatchesUseCase = get(),
+            addPlayerUseCase = get(),
+            updatePlayerUseCase = get(),
+            deletePlayerUseCase = get(),
+            getAllPlayersUseCase = get()
         )
     }
 }

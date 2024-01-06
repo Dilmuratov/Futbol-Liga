@@ -1,4 +1,4 @@
-package com.example.futbolliga.view
+package com.example.futbolliga.view.main
 
 import android.os.Bundle
 import android.view.View
