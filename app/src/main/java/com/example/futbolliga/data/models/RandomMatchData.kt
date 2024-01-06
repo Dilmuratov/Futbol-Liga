@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "random_matches")
-data class MatchData(
+data class RandomMatchData(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
     val teamA: String,

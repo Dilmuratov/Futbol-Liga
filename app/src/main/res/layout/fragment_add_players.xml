@@ -77,7 +77,7 @@
         android:fontFamily="@font/gilroy_regular"
         android:text="*Jámi 6 komanda bar. 2 adam 1-turdı oynamay keyingi basqıshqa shıǵadı."
         android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@id/ll_recycler_view"/>
+        app:layout_constraintTop_toBottomOf="@id/ll_recycler_view" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/ll_random"
@@ -103,6 +103,7 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_championship"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/bg_btn"

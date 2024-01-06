@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="16dp">
+
+    <TextView
+        android:id="@+id/tv_team_a"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="8dp"
+        android:text="12345678912345678912"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_team_b"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="8dp"
+        android:text="12345678912345678912"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_team_a" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_score_a"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="number"
+        android:padding="8dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_team_a"
+        app:layout_constraintDimensionRatio="1"
+        android:maxLength="2"
+        app:layout_constraintStart_toEndOf="@id/tv_team_a"
+        app:layout_constraintTop_toTopOf="@id/tv_team_a" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_score_b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="number"
+        android:padding="8dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_team_b"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toEndOf="@id/tv_team_b"
+        app:layout_constraintTop_toTopOf="@id/tv_team_b" />
+
+    <ImageView
+        android:id="@+id/iv_save"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_save"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_score_a"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_edit"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_score_a"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

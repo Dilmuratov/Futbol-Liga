@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.futbolliga.data.models.MatchData
+import com.example.futbolliga.data.models.RandomMatchData
 import com.example.futbolliga.databinding.ItemResultGameBinding
 import com.example.futbolliga.utils.gone
 import com.example.futbolliga.utils.set
 import com.example.futbolliga.utils.visible
 
 class SavedGameAdapter(private val context: Context) :
-    ListAdapter<MatchData, SavedGameAdapter.ViewHolder>(
-        object : DiffUtil.ItemCallback<MatchData>() {
-            override fun areItemsTheSame(oldItem: MatchData, newItem: MatchData) =
+    ListAdapter<RandomMatchData, SavedGameAdapter.ViewHolder>(
+        object : DiffUtil.ItemCallback<RandomMatchData>() {
+            override fun areItemsTheSame(oldItem: RandomMatchData, newItem: RandomMatchData) =
                 oldItem == newItem
 
-            override fun areContentsTheSame(oldItem: MatchData, newItem: MatchData) =
+            override fun areContentsTheSame(oldItem: RandomMatchData, newItem: RandomMatchData) =
                 oldItem.id == newItem.id
         }
     ) {
@@ -62,13 +62,13 @@ class SavedGameAdapter(private val context: Context) :
         }
     }
 
-    private var onItemLongClickListener: ((MatchData) -> Unit)? = null
-    fun setOnItemLongClickListener(block: ((MatchData) -> Unit)) {
+    private var onItemLongClickListener: ((RandomMatchData) -> Unit)? = null
+    fun setOnItemLongClickListener(block: ((RandomMatchData) -> Unit)) {
         onItemLongClickListener = block
     }
 
-    private var selectAll: ((MatchData) -> (Boolean))? = null
-    fun selectAll(block: ((MatchData) -> (Boolean))) {
+    private var selectAll: ((RandomMatchData) -> (Boolean))? = null
+    fun selectAll(block: ((RandomMatchData) -> (Boolean))) {
         selectAll = block
     }
 

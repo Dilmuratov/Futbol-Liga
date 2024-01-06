@@ -54,5 +54,14 @@
         android:id="@+id/addPlayerFragment"
         android:name="com.example.futbolliga.view.championship.AddPlayerFragment"
         android:label="AddPlayerFragment"
-        tools:layout="@layout/fragment_add_players" />
+        tools:layout="@layout/fragment_add_players">
+        <action
+            android:id="@+id/action_addPlayerFragment_to_championshipFragment"
+            app:destination="@id/championshipFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/championshipFragment"
+        android:name="com.example.futbolliga.view.championship.ChampionshipFragment"
+        android:label="ChampionshipFragment"
+        tools:layout="@layout/fragment_championship" />
 </navigation>

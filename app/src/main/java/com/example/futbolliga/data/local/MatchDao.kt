@@ -6,20 +6,20 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.futbolliga.data.models.MatchData
+import com.example.futbolliga.data.models.PlayOffMatchData
 import com.example.futbolliga.data.models.Player
-import kotlinx.coroutines.flow.Flow
+import com.example.futbolliga.data.models.RandomMatchData
 
 @Dao
 interface MatchDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addMatch(matchData: MatchData)
+    suspend fun addMatch(randomMatchData: RandomMatchData)
 
     @Query("SELECT * FROM random_matches")
-    suspend fun getAllMatches(): List<MatchData>
+    suspend fun getAllMatches(): List<RandomMatchData>
 
     @Delete
-    suspend fun deleteMatch(matchData: MatchData)
+    suspend fun deleteMatch(randomMatchData: RandomMatchData)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addPlayer(player: Player)
@@ -32,4 +32,16 @@ interface MatchDao {
 
     @Delete
     suspend fun deletePlayer(player: Player)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addPOMatch(playOffMatchData: PlayOffMatchData)
+
+    @Query("SELECT * FROM championship_play_off_matches")
+    suspend fun getAllPOMatched(): List<PlayOffMatchData>
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updatePOMatch(playOffMatchData: PlayOffMatchData)
+
+    @Delete
+    suspend fun deletePOMatch(playOffMatchData: PlayOffMatchData)
 }

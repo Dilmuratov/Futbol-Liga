@@ -14,7 +14,11 @@ val appModule = module {
             addPlayerUseCase = get(),
             updatePlayerUseCase = get(),
             deletePlayerUseCase = get(),
-            getAllPlayersUseCase = get()
+            getAllPlayersUseCase = get(),
+            addPOMatchUseCase = get(),
+            updatePOMatchUseCase = get(),
+            getAllPOMatchesUseCase = get(),
+            deletePOMatchUseCase = get()
         )
     }
 }

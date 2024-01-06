@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.futbolliga.R
-import com.example.futbolliga.data.models.MatchData
+import com.example.futbolliga.data.models.RandomMatchData
 import com.example.futbolliga.databinding.FragmentSavedGamesBinding
 import com.example.futbolliga.presentation.MainViewModel
 import com.example.futbolliga.utils.gone
@@ -16,10 +16,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SavedGameFragment : Fragment(R.layout.fragment_saved_games) {
     private lateinit var binding: FragmentSavedGamesBinding
-    private lateinit var matches: List<MatchData>
+    private lateinit var matches: List<RandomMatchData>
     private lateinit var adapter: SavedGameAdapter
     private val mainViewModel: MainViewModel by viewModel()
-    private val deletedMatches = mutableListOf<MatchData>()
+    private val deletedMatches = mutableListOf<RandomMatchData>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSavedGamesBinding.bind(view)

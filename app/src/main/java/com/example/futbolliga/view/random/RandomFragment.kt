@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.futbolliga.R
 import com.example.futbolliga.data.local.Constants
-import com.example.futbolliga.data.models.MatchData
+import com.example.futbolliga.data.models.RandomMatchData
 import com.example.futbolliga.data.models.TeamData
 import com.example.futbolliga.databinding.FragmentRandomBinding
 import com.example.futbolliga.presentation.MainViewModel
@@ -149,15 +149,13 @@ class RandomFragment : Fragment(R.layout.fragment_random) {
                     binding.etScoreSecond.setText("0")
                 }
             }
-
             timer.start()
-
         }
 
         binding.btnSave.setOnClickListener {
             MainScope().launch {
                 mainViewModel.addMatch(
-                    MatchData(
+                    RandomMatchData(
                         0,
                         teamA.teamName,
                         teamB.teamName,
